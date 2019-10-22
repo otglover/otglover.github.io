@@ -19,7 +19,7 @@ skills:
  - Tableau
  - SAS Enterprise Minor
  - Elite
-  - SQL
+ - SQL
  - Machine learning
 #Work experience is required
 roles:
@@ -28,6 +28,7 @@ roles:
    end: 2019
    employer: DLA Piper LLP
    description: Global Law firm. <br/> I am a senior analyst working closely with the Global Partners, managing their global book of business.
+roles:
  - title: Project Controls Consultant 
    start: 2005
    end: 2011
@@ -37,7 +38,9 @@ roles:
 education:
  - level: Bachelor of Arts (B.A.)
    date: 2005
-   subject: Legal Studies Emphasis in Consumer Science  
+   subject: Legal Studies Emphasis in Consumer Science
+   school: University of Wisconsin - Madison 
+education:   
 - level: Master of Science (M.S.)
   date: 2020
   subject: Business Analytics
