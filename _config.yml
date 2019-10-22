@@ -31,9 +31,9 @@ education:
    school: University of Wisconsin - Madison 
 education:   
 - level: Master of Science (M.S.)
-   date: 2020
-   subject: Business Analytics
-   school: University of Notre Dame     
+  date: 2020
+  subject: Business Analytics
+  school: University of Notre Dame     
 #List of interesting Github repo/projects to include - optional
 github:
  - github.com/otglover/DataScienceProjects/tree/otglover-gutenbergrWebScraping-1
