@@ -1,10 +1,8 @@
 # Site settings
 title: Welcome to the otglover’s Data Science Project's homepage!
 name: Othiel Glover
-
 # Build settings
 markdown: kramdown
-
 #User specific content
 #Links that will appear in the navbar
 primarylinks:
@@ -14,6 +12,15 @@ primarylinks:
 skills:
  - Business + Data Science
  - Law Background
+ - R Studio
+ - SPSS
+ - Microsoft Office
+ - Excel Precision Tools
+ - Tableau
+ - SAS Enterprise Minor
+ - Elite
+  - SQL
+ - Machine learning
 #Work experience is required
 roles:
  - title: Global Client Financial Management 
@@ -21,7 +28,6 @@ roles:
    end: 2019
    employer: DLA Piper LLP
    description: Global Law firm. <br/> I am a senior analyst working closely with the Global Partners, managing their global book of business.
-roles:
  - title: Project Controls Consultant 
    start: 2005
    end: 2011
@@ -31,9 +37,7 @@ roles:
 education:
  - level: Bachelor of Arts (B.A.)
    date: 2005
-   subject: Legal Studies Emphasis in Consumer Science
-   school: University of Wisconsin - Madison 
-education:   
+   subject: Legal Studies Emphasis in Consumer Science  
 - level: Master of Science (M.S.)
   date: 2020
   subject: Business Analytics
