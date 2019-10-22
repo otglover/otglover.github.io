@@ -1,3 +1,56 @@
 theme: jekyll-theme-leap-day
 title: Welcome to the otglover’s Data Science Project's homepage!
 description: Please take your time reviewing all the Analytics Project's I'm creating. 
+
+# Site settings
+title: Othiel T. Glover
+name: Othiel Glover
+
+#User specific content
+#Links that will appear in the navbar
+primarylinks:
+ - title: GitHub
+   url: https://github.com/otglover
+ 
+#Any buzzword skills you want to include
+skills:
+ - Business + Data Science
+ - Law Background
+ 
+
+#Work experience is required
+roles:
+ - title: Global Client Financial Management 
+   start: Oct-2013
+   end: Oct-2019
+   employer: DLA Piper LLP
+   description: Global Law firm. <br/> I am a senior  working closely with the Global Partners, managing their global book of business.
+   
+ roles:
+ - title: Project Controls Consultant 
+   start: Dec-2005
+   end: Jan-2011
+   employer: Schiff Hardin LLP
+   description: Global Law firm. <br/> I was a consultant working closely with the Project Controls Practice Group. We did major project auditing and reforecasts for energy projects in North America.
+     
+#Education is required
+education:
+ - level: Bachelor of Arts (B.A.)
+   date: 2005
+   subject: Legal Studies Emphasis in Consumer Science
+   school: University of Wisconsin - Madison
+   
+- level: Master of Science (M.S.)
+   date: 2020
+   subject: Business Analytics
+   school: University of Notre Dame   
+   
+#List of interesting Github repo/projects to include - optional
+github:
+ - https://github.com/otglover/DataScienceProjects/tree/otglover-gutenbergrWebScraping-1
+ - https://github.com/otglover/DataScienceProjects/blob/master/NBAHomeAway.twbx
+ - https://github.com/otglover/DataScienceProjects/blob/master/Sentiment%20Analysis.R
+ - https://github.com/otglover/DataScienceProjects/blob/master/Forecast%204.R
+ - https://github.com/otglover/DataScienceProjects/blob/master/IAP%20Project.pptx
+ - https://github.com/otglover/DataScienceProjects/blob/master/Board%20Presentation%20Project.twb
+
