@@ -4,7 +4,6 @@ layout: default
 
 <div class="row">
 	<div class="col-md-9 rightBorder">
-		{% include section_intro.html %}
 		{% include section_skills.html %}
 		{% include section_workexperience.html %}
 		{% include section_github.html %}
