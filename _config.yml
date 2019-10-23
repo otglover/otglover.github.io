@@ -1,8 +1,7 @@
 # Site settings
 title: Welcome to the otglover’s Data Science Project's homepage!
 name: Othiel Glover
-# Build settings
-markdown: kramdown
+
 #User specific content
 #Links that will appear in the navbar
 primarylinks:
