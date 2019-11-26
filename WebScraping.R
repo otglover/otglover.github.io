@@ -1,7 +1,7 @@
 #' ---
-#' title: "Assignment 1 - MSBA 70450"
-#' author: ""Othiel Glover
-#' date: "September 16th, 2019"
+#' title: "Webscraping"
+#' author: "OGlover"
+#' date: "September 15th, 2019"
 #' ---
 
 library(tidyverse)
@@ -60,15 +60,12 @@ str_subset(fruit,pattern)
 #----------------------------------------------------------------
 # PART II: WORKING WITH DATA FROM PROJECT GUTENBERG
 #----------------------------------------------------------------
+# Only using functions provided by the gutenbergr package and other string and data manipulation functions we are familiar with in R:
 
 library(gutenbergr)
 
-doyle <- gutenberg_works(author == "Doyle, Arthur Conan")
-view(gutenberg_works())
-view(gutenberg_works$gutenberg_bookshelf)
-
 #1. List all of the books written by Oscar Wilde (sort by title).
-
+# There are 31 of them in the Project Gutenberg library:
 gutenberg_works() %>%
   filter(author == "Wilde, Oscar") %>%
   arrange(title) %>% 
@@ -79,42 +76,39 @@ gutenberg_works() %>%
 # A little known fact about him is that he was also a physician who loved poetry. A few of his published poems are part of the
 # project gutenberg archives. Find and list them (sort by title).
 
+# First we find all books by Sir Arthur Conan Doyle and review them
+doyle <- gutenberg_works(author == "Doyle, Arthur Conan")
+view(gutenberg_works())
+
+# Next we look for any book with either the word "Poetry" or "Poem" in the title, that were written by him.
 poetry_books <- filter(gutenberg_works(), grepl("Poe", title, fixed = FALSE))
 doyle_poems <- poetry_books %>%
   filter(author == "Doyle, Arthur Conan") %>% 
   arrange(title)
 
+# Looks like there is just one book that contains his poems:
+# Book ID #38071
 print(doyle_poems)
 
-#---Alternative:
-gutenberg_works() %>%
-  filter(author == "Doyle, Arthur Conan", is.na(gutenberg_bookshelf)) %>% 
-  arrange(title) %>% 
-  select(title) %>% 
-  print(n=36)
-
 # Once we have the book id (title), we can now download it by using gutenberg_download().
+# We find that the titles of his poems are listed in the table of contents
+# on rows 82-98 of the book text:
 doyle_poems <- gutenberg_download(38071)
 print(doyle_poems, n=98)
-?print
 
-# Let's add new features for line number, book and chapter.
+# To isolate these titles, we first add new features for line number, book and chapter.
 doyle_poems <- doyle_poems %>%
   mutate(
     linenumber = row_number()
-      ) 
+  ) 
 doyle_poems
+print(doyle_poems, n=98)
 
-
+# Firnally, we select out just the lines that contain the titles of his poems, and organize them alphabetically.
 doyle_poems <- doyle_poems[82:98,] %>%
-  select(text) %>%
+  select(text) %>% 
   arrange(text)
 print(doyle_poems)
-
-# We can also download more than one book at a time.
-# Note our use of the "title" metafield.
-books <- gutenberg_download(c(768, 1260), meta_fields = "title")
-books
 
 #----------------------------------------------------------------
 # PART III: WORKING WITH YELP RESTAURANT REVIEW DATA
@@ -130,10 +124,10 @@ library(jsonlite)
 
 #1. Create a visualization of the 20 most frequently occurring words.
 
-# Start by defining base url:
+# We first start by defining base url - our restaurant is The Kitchen in Chicago:
 baseURL <- "https://www.yelp.com/biz/the-kitchen-chicago-3?osq=the+kitchen"
 
-# Next, retrieve the scripts within the html.
+# Next, we retrieve the scripts within the html.
 tkHTML <- read_html(baseURL) %>%
   html_nodes("script")
 tkHTML
@@ -147,7 +141,7 @@ indexJSON
 the_Kitchen_Reviews <- fromJSON(html_text(tkHTML[indexJSON]), flatten = TRUE)
 the_Kitchen_Reviews
 
-# To make the data easier to work with, let's convert it to a tibble with only the data we want.
+# To make the data easier to work with, we convert it to a tibble with only the data we want.
 the_Kitchen_Reviews <-
   tibble(
     reviewDate = unlist(the_Kitchen_Reviews$review["datePublished"]),
@@ -157,11 +151,7 @@ the_Kitchen_Reviews <-
   )
 the_Kitchen_Reviews
 
-# Note that all we've retrieved so far, are simply the reviews on the first page.
-# To get all the reviews for this restaurant, we need to recurse through the pages.
-# The map_dfr() function from the purr package row-binds the results from each iteration.
-# Note: This takes a bit of time to run. Not a bad time to go get some coffee.
-
+# Now that we've retrieved the reviews on the first page, we next do the same for all 30 pages of reviews available:
 the_Kitchen_Reviews <- map_dfr(1:30, function(x) {
   
   # A simple but effective progress indicator. :)
@@ -190,75 +180,56 @@ the_Kitchen_Reviews <- map_dfr(1:30, function(x) {
   
 })
 
-# What do we now have?
+# We take a look at some of the reviews we've extracted, to make sure our code ran properly:
 the_Kitchen_Reviews
 
-# change rating to factor
+# Next, we change rating to factor, so we can later group and sort by rating
 the_Kitchen_Reviews_mod <- as.factor(the_Kitchen_Reviews$rating) 
-the_Kitchen_Reviews_mod
 
-# Now we are ready to tokenize our text data.
-# This is done using the unnest_tokens() function.
-# Import the stop words dictionary into environment:
+# Next we tokenize our text data by using the unnest_tokens() function.
+# First we import the stop words dictionary into environment:
 data("stop_words")
 
-# Let's tidy it, remove stop words and get the most frequently occurring words.
-tkreviews %>%
+# Next we tidy the data, remove stop words, and get the most frequently occurring words.
+the_Kitchen_Reviews %>%
   unnest_tokens(output = word, input = review, token = "words") %>%
   anti_join(stop_words, by = "word") %>%
   count(word, sort = TRUE)
 
-# We can create a simple word cloud using the wordcloud2 package.
+# In order to create a simple word cloud, we load the wordcloud2 package.
 library(wordcloud2)
 
-tkreviews %>%
+# For this visualization, we create a word cloud of the 20 most frequently occurring words in the reviews we extracted. 
+the_Kitchen_Reviews %>%
   unnest_tokens(output = word, input = review, token = "words") %>%
   anti_join(stop_words, by = "word") %>%
   count(word, sort = TRUE) %>%
   top_n(20) %>% 
-  wordcloud2(size = .5, shape = "square")
-
+  wordcloud2(size = .5, shape = "circle")
 
 #2. Create another visualization of the top 20 words based on tf-idf.
-
-# To get a better measure of word importance, let's look at tf-idf.
+# To get a better measure of word importance, we look at tf-idf.
 # We do this by using the bind_tf_idf() function from the tidytext package.
-
-summary(the_Kitchen_Reviews)
-
-tkreviews %>%
-  unnest_tokens(output = word, input = review, token = "words") %>%
-  anti_join(stop_words, by = "word") %>%
-  count(word, sort = TRUE)
-
+# Here we also group by rating, as this will help us organize the types of words people use by the rating they give the restaurant.
 
 the_Kitchen_Reviews %>%
   unnest_tokens(output = word, input = review, token = "words") %>%
   anti_join(stop_words, by = "word") %>% 
   count(rating, word, sort = TRUE) %>%
   bind_tf_idf(word, rating, n) %>%
-  arrange(desc(tf))
-
-tf_df_the_Kitchen_Reviews <- the_Kitchen_Reviews %>%
-  unnest_tokens(output = word, input = review, token = "words") %>%
-  anti_join(stop_words, by = "word") %>% 
-  group_by(rating) %>%
-  mutate(total = n()) %>%
-  group_by(rating, word, total) %>%
-  summarize(count = n()) %>%
-  ungroup() %>%
-  mutate(tf = count/total) %>%
-  arrange(desc(tf))
-
-tf_df_the_Kitchen_Reviews
-
-sub_tf_df_the_Kitchen_Reviews <- select(tf_df_the_Kitchen_Reviews,word,count)
-
-sub_tf_df_the_Kitchen_Reviews
-
-sub_tf_df_the_Kitchen_Reviews %>%
-  top_n(20) %>%
-  wordcloud2(size = .5, shape = "circle")
+  top_n(20, tf_idf) %>%
+  mutate(word = reorder(word, tf_idf)) %>%
+  arrange(desc(tf_idf)) %>% 
+  ggplot(mapping = aes(x = word, y = tf_idf)) +
+  geom_col() +
+  labs(x = "word", y = "tf_idf") +
+  ggtitle("Top 20 Most Frequently-used Words in Reviews \nof The Kitchen in Chicago \nCalculation: (tf-idf)") +
+  coord_flip() + 
+  geom_bar(width=0.7, stat = "identity", fill = "blue") +
+  theme_minimal()
 
 #3. Is there a difference between the words on both lists? If so, why do you think that is?
-#Yes, there is a difference between the two lists. This is likely because
+# Answer: Yes, there is a difference between the two lists. 
+#This is likely because tf-idf uses a weighting approach by choosing a weighting scheme. 
+#The tf-idf approach will look for words with more discriminative power rather than just summarizing by its frequency, 
+#whereas the first list looks purely at frequency of occurrence of each of the words across the reviews without weighting them.
