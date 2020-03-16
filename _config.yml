@@ -31,33 +31,38 @@ skills:
 
 #Work experience is required
 roles:
- - title: Global Client Financial Management
-   start: 2013
+ - title: GCFM - Lead Analyst
+   start: 2015
    end: 2019
-   employer: DLA Piper LLP
+   employer: DLA Piper LLP - Global Client Financial Management
    description: Recruited to join an elite team of analyst that manage and develop top partner’s budgets for international clients and close any billing pitfalls to maximize profitability. Sleuthed out underlying rate problems that the firm’s partners were having and saved them on average 7% on lost revenue.
- - title: Project Controls 
-   start: 2005
+ - title: GCFM - Specialist
+   start: 2013
+   end: 2015
+   employer: DLA Piper LLP - Global Client Financial Management
+   description:	Guided the training of over 15 new interns and specialists on forecasting techniques and financial reporting procedures which gave them the skill set to be able to effectively manage over 250 global matters. 	Lead all new global matter workflows in Chicago which allowed me the freedom to create teams with other departments to close billing life cycle pitfalls in Chicago and lower billing turn around by 2 days.	Led the GCFM on a new leadership team called (C.U.T) created by top management to provide feedback on all new firm initiatives and unify departments to drive results. I lead the charge in training other department on cross function work, that lead to less turn over in other departments.
+  - title: Project Controls 
+   start: 2007
    end: 2011
    employer: Schiff Hardin LLP
-   description: Emerald Street Ventures was established as an incubator vehicle for the development of a number of software and legal-tech projects, and a rapidly growing, London-based start-up using innovative technologies to revolutionise and change the software and legal-tech landscape. Working with a range of cutting edge technologies and techniques including Scala, Cassandra, CoreOS, a variety of Machine Learning techniques.
- - title: Senior Engineer
-   start: 2012
-   end: 2016
-   employer: Covestor
-   description: Covestor is an investment marketplace startup that was successfully acquired by Interactive Brokers in 2015. <br/> Working as a senior engineer, I worked closely with the CTO and across the full-stack, I was involved in all aspects of the technology including the website and back-end services.
- - title: Associate Manager
+   description: Consultant working closely with the Project Controls Practice Group. We did major project auditing and reforecasts for energy projects in North America.  
+ - title: Project Assistant 
    start: 2005
-   end: 2012
-   employer: Accenture
-   description: Working on a range of functional and technical roles, primarily working on client sites in Financial Services in London and Europe.
-
+   end: 2007
+   employer: Schiff Hardin LLP
+   description:	Major contributor to insurance trial preparation and conducted computerized searches to prepare for depositions, hearings and trials. Maintained the flow of legal documents both hard copy and electronic for over 500 cases, this led to consistent wins and steady revenue for the firm.
+   
 #Education is required
 education:
- - level: Bachelor of Science (B.Sc.)
-   date: 2003
-   subject: Artificial Intelligence and Computer Science
-   school: University of Birmingham
+ - level: Bachelor of Arts 
+   date: 2005
+   subject: Pre-Law with emphasis in Consumer Science
+   school: University of Wisconsin - Madison
+ education:
+ - level: Masters of Science 
+   date: 2020
+   subject: Business Analytics
+   school: University of Notre Dame - Mendoza College of Business
 
 
 #This section is optional - embeds slideshows from speakerdeck
