@@ -31,15 +31,15 @@ skills:
 
 #Work experience is required
 roles:
- - title: CTO
-   start: 2017
-   end: Ongoing
-   employer: Basement Crowd
-   description: Legaltech startup producing a range of innovative legal products. Products include <a href="https://www.juriosity.com" taget="_blank">Juriosity</a>, <a href="https://www.fromcounsel.com" taget="_blank">FromCounsel</a>, <a href="https://www.sparqa.com" taget="_blank">Sparqa</a>.
- - title: Senior Engineer
-   start: 2016
-   end: 2017
-   employer: Emerald Street Ventures
+ - title: Global Client Financial Management
+   start: 2013
+   end: 2019
+   employer: DLA Piper LLP
+   description: Recruited to join an elite team of analyst that manage and develop top partner’s budgets for international clients and close any billing pitfalls to maximize profitability. Sleuthed out underlying rate problems that the firm’s partners were having and saved them on average 7% on lost revenue.
+ - title: Project Controls 
+   start: 2005
+   end: 2011
+   employer: Schiff Hardin LLP
    description: Emerald Street Ventures was established as an incubator vehicle for the development of a number of software and legal-tech projects, and a rapidly growing, London-based start-up using innovative technologies to revolutionise and change the software and legal-tech landscape. Working with a range of cutting edge technologies and techniques including Scala, Cassandra, CoreOS, a variety of Machine Learning techniques.
  - title: Senior Engineer
    start: 2012
