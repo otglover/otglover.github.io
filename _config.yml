@@ -31,10 +31,6 @@ skills:
 
 #Work experience is required
 roles:
-- level: Masters of Science 
-   date: 2020
-   subject: Business Analytics
-   school: University of Notre Dame - Mendoza College of Business
  - title: GCFM - Lead Analyst
    start: 2015
    end: 2019
@@ -58,6 +54,10 @@ roles:
    
 #Education is required
 education:
+- level: Masters of Science 
+   date: 2020
+   subject: Business Analytics
+   school: University of Notre Dame - Mendoza College of Business
  - level: Bachelor of Arts 
    date: 2005
    subject: Pre-Law with emphasis in Consumer Science
