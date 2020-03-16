@@ -1,17 +1,22 @@
 # Site settings
-title: Welcome to the otglover’s Data Science Project's homepage!
+title: Othiel Glover
 name: Othiel Glover
+
 # Build settings
 markdown: kramdown
+
 #User specific content
 #Links that will appear in the navbar
 primarylinks:
  - title: GitHub
    url: https://github.com/otglover
+- title: LinkedIn
+   url: https://www.linkedin.com/otglover
+ 
 #Any buzzword skills you want to include
 skills:
  - Business + Data Science
- - Law Background
+ - Law Admin. Background
  - R Studio
  - SPSS
  - Microsoft Office
@@ -21,30 +26,33 @@ skills:
  - Elite
  - SQL
  - Machine learning
+ - Google Analytics
+ - Project Management
+ 
 #Work experience is required
 roles:
  - title: Global Client Financial Management 
    start: 2013
    end: 2019
    employer: DLA Piper LLP
-   description: Global Law firm. <br/> I am a senior analyst working closely with the Global Partners, managing their global book of business.
-roles:
+   description:	Recruited to join an elite team of analyst that manage and develop top partner’s budgets for international clients and close any billing pitfalls to maximize profitability. Sleuthed out underlying rate problems that the firm’s partners were having and saved them on average 7% on lost revenue. 
  - title: Project Controls Consultant 
    start: 2005
    end: 2011
    employer: Schiff Hardin LLP
-   description: Global Law firm. <br/> I was a consultant working closely with the Project Controls Practice Group. We did major project auditing and reforecasts for energy projects in North America.     
+   description: Consultant working closely with the Project Controls Practice Group. We did major project auditing and reforecasts for energy projects in North America.     
+
 #Education is required
 education:
  - level: Bachelor of Arts (B.A.)
    date: 2005
    subject: Legal Studies Emphasis in Consumer Science
    school: University of Wisconsin - Madison 
-education:   
 - level: Master of Science (M.S.)
   date: 2020
   subject: Business Analytics
-  school: University of Notre Dame     
+  school: University of Notre Dame - Mendoza College of Business   
+  
 #List of interesting Github repo/projects to include - optional
 github:
  - github.com/otglover/DataScienceProjects/tree/otglover-gutenbergrWebScraping-1
@@ -53,3 +61,22 @@ github:
  - github.com/otglover/DataScienceProjects/blob/master/Forecast%204.R
  - github.com/otglover/DataScienceProjects/blob/master/IAP%20Project.pptx
  - github.com/otglover/DataScienceProjects/blob/master/Board%20Presentation%20Project.twb
+ 
+ intro: |
+   I am an Analytics Professional helping large-scale companies bring to light the hidden actionable insights in their data so senior leaders can drive out waste and unnecessary costs for improved margins and higher profit growth.
+   I honed my financial reporting and project management skills at top global law firms and I'm looking for an opportunity to continue to grow my abilities in cost modeling, operational efficiency and quality reporting and this role at JP Morgan Chase seems like a perfect fit. 	
+
+additionalinfo: |
+   •	Successfully sold a new department to top business partners and the team I build in Chicago works on 90% of all global projects that originate in Chicago.
+   •	Created a forecasting template via Excel precision tools that all analyst currently use when creating new forecasting and accrual reporting for new clients. 
+   •	Successfully managed over 40 global projects over a 6-year period. 
+   •	Effectively reduced benchmark rate discounts for 10 fortune 500 global clients, which directly increased revenue for my client base by 7%. 
+   •	Built a statistical model using R (Python) and SQL for a large government contractor (at Notre Dame) that allows them to predict if they will win a project.
+   •	Created a conformance research team that was able to retrieve over 25 Million dollars in back charges for our energy client. 
+   •	Prepared C-suite level dashboards via PowerPoint and Tableau for government contractor (at Notre Dame) that lead to our model being utilized by their contract managers. 
+
+   
+   
+   
+   
+   
