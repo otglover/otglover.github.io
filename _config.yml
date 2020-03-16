@@ -31,6 +31,10 @@ skills:
 
 #Work experience is required
 roles:
+- level: Masters of Science 
+   date: 2020
+   subject: Business Analytics
+   school: University of Notre Dame - Mendoza College of Business
  - title: GCFM - Lead Analyst
    start: 2015
    end: 2019
@@ -58,24 +62,7 @@ education:
    date: 2005
    subject: Pre-Law with emphasis in Consumer Science
    school: University of Wisconsin - Madison
- - level: Masters of Science 
-   date: 2020
-   subject: Business Analytics
-   school: University of Notre Dame - Mendoza College of Business
-
-
-#This section is optional - embeds slideshows from speakerdeck
-# to get the speakerdeck ID copy the embed code and look for the data-it attribute
-speakerdeck:
-   profileurl: https://speakerdeck.com/robhinds
-   talks:
-    - title: Product Management for Engineers
-      speakerdeckId: 94f0070c4e434ec79fe9b4eb2cb574e0
-      conference: API Conference, Berlin 2018
-    - title: Agile Machine Learning - from Theory to Production
-      speakerdeckId: ec84f2f56e9743afb0675b1eeeb6b6ce
-      conference: W-JAX Conference, Munich 2017 (London 2017)
-
+ 
 #List of interesting Github repo/projects to include - optional
 github:
  - robhinds/robhinds.github.io
@@ -88,11 +75,6 @@ github:
  - robhinds/genotype
  - robhinds/footweets
  - robhinds/ElasticSearchGradle
-
-#Stackoverflow flair is optional
-stackoverflow:
-   profileurl: http://stackoverflow.com/users/258813/rhinds
-   flairimageurl: http://stackoverflow.com/users/flair/258813.png
 
 intro: |
   I am an engineer with 15 years experience working in technology. I have primarily worked on the JVM, but have worked across a broad range of technologies thereon: Java, Groovy, Android, Coldfusion and most recently Scala. As well as spending a reasonable amount of time building applications for the web, which has given me an exposure to a range of javascript technologies over the years, through jQuery, extjs, knockout, backbone and most recently to React. <br/><br/>
